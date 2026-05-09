@@ -13,10 +13,9 @@
   font-size: xx-large;
   text-align: justify;
   font-style: italic;
-  margin-bottom: 50px;
 }
 
-#text::before {
+#text p::before {
   content: "\201C"; 
   font-size: 2em;
 }
@@ -24,5 +23,5 @@
 #author {
   font-size: x-large;
   text-align: right;
-  margin-right: 100px;
+  margin-right: 50px;
 }
