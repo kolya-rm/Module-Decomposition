@@ -23,5 +23,16 @@
 #author {
   font-size: x-large;
   text-align: right;
-  margin-right: 50px;
+  margin-right: 200px;
+}
+
+#btn_get_new {
+  width: 200px;
+  height: 50px;
+  font-size: large;
+}
+
+#button_container {
+  text-align: center;
+  padding: 100px;
 }
