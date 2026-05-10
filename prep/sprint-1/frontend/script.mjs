@@ -1,5 +1,6 @@
 const QUOTE_URL = "http://127.0.0.1:3000/"
 
+
 function onLoad() {
   document.getElementById("btn_get_new").onclick = showQuote;
   showQuote();
