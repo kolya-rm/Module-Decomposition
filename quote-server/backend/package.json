@@ -1,5 +1,12 @@
 {
   "type": "module",
+  "name": "quote-server",
+  "version": "0.0.1",
+  "description": "Simple backend example based on Express",
+  "main": "quote-server.mjs",
+  "scripts": {
+    "start": "node quote-server.mjs"
+  },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1"
