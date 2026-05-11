@@ -1,4 +1,4 @@
-const QUOTE_URL = "http://127.0.0.1:3000/"
+const QUOTE_URL = "http://kolya-rm-quote-server-backend.178.105.39.91.sslip.io";
 
 
 function onLoad() {
