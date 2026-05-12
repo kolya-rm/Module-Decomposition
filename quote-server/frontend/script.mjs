@@ -2,7 +2,7 @@ const QUOTE_URL = "http://kolya-rm-quote-server-backend.178.105.39.91.sslip.io";
 
 
 function onLoad() {
-  document.getElementById("btn_get_new").onclick = showQuote;
+  document.getElementById("btn_get_quote").onclick = showQuote;
   showQuote();
 }
 

@@ -1,5 +1,6 @@
 #container {
   display: grid;
+  grid-template-rows: 1fr 1fr;
   place-items: center;
   height: 100vh;
 }
@@ -26,7 +27,7 @@
   margin-right: 200px;
 }
 
-#btn_get_new {
+#btn_get_quote {
   width: 200px;
   height: 50px;
   font-size: large;
@@ -34,5 +35,5 @@
 
 #button_container {
   text-align: center;
-  padding: 100px;
+  padding: 50px;
 }
