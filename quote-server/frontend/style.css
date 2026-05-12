@@ -28,12 +28,52 @@
 }
 
 #btn_get_quote {
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: 30px;
   font-size: large;
 }
 
 #button_container {
   text-align: center;
   padding: 50px;
+}
+
+#add_quote_container {
+  width: 60%;
+}
+
+#add_quote {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0.5fr 3fr 0.5fr 1fr 1fr;
+}
+
+#label_add_quote_text {
+  font-size: large;
+}
+
+#add_quote_text {
+  height: 150px;
+  font-size: large;
+}
+
+#label_add_quote_author {
+  font-size: large;
+}
+
+#add_quote_author {
+  height: 30px;
+  font-size: large;
+}
+
+#btn_add_quote {
+  width: 150px;
+  height: 30px;
+  margin: auto;
+  height: 30px;
+  font-size: large;
+}
+
+textarea {
+  resize: none;
 }
