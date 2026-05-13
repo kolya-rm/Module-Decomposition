@@ -27,6 +27,10 @@
   margin-right: 200px;
 }
 
+#get-quote-author p::before {
+  content: "\2014";
+}
+
 #btn-get-quote {
   width: 150px;
   height: 30px;

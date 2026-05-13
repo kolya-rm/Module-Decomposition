@@ -30,6 +30,27 @@ function showQuote() {
 
 function addQuote() {
   console.log("Add quote button clicked");
+  fetch(QUOTE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify({
+      quote: document.getElementById("add-quote-text").value,
+      author: document.getElementById("add-quote-author").value,
+    })
+  }).then(response => {
+    if (response.ok) {
+      return response;
+    } else {
+      console.error("Error: ", response.status);
+    }
+  }).then(result => {
+    console.log(result)
+  })
+  .catch(error => {
+    console.error("Network error: ", error);
+  })
 }
 
 
