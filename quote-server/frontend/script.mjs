@@ -38,19 +38,16 @@ function addQuote() {
     body: JSON.stringify({
       quote: document.getElementById("add-quote-text").value,
       author: document.getElementById("add-quote-author").value,
-    })
-  }).then(response => {
+    }),
+  }).then((response) => {
     if (response.ok) {
-      return response;
+      alert("Success. Quote added.");
     } else {
-      console.error("Error: ", response.status);
+      throw new Error();        
     }
-  }).then(result => {
-    console.log(result)
-  })
-  .catch(error => {
-    console.error("Network error: ", error);
-  })
+  }).catch((error) => {
+    alert("Error. Quote didn`t add");
+  });
 }
 
 
