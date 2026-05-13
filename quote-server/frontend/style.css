@@ -5,68 +5,68 @@
   height: 100vh;
 }
 
-#quote {
+#get-quote-container {
   width: 60%;
   margin: auto;
 }
 
-#text {
+#get-quote-text {
   font-size: xx-large;
   text-align: justify;
   font-style: italic;
 }
 
-#text p::before {
+#get-quote-text p::before {
   content: "\201C"; 
   font-size: 2em;
 }
 
-#author {
+#get-quote-author {
   font-size: x-large;
   text-align: right;
   margin-right: 200px;
 }
 
-#btn_get_quote {
+#btn-get-quote {
   width: 150px;
   height: 30px;
   font-size: large;
 }
 
-#button_container {
+#get-quote-button-container {
   text-align: center;
   padding: 50px;
 }
 
-#add_quote_container {
+#add-quote-container {
   width: 60%;
 }
 
-#add_quote {
+#add-quote {
   width: 100%;
   display: grid;
   grid-template-rows: 0.5fr 3fr 0.5fr 1fr 1fr;
 }
 
-#label_add_quote_text {
+#label-add-quote-text {
   font-size: large;
 }
 
-#add_quote_text {
+#add-quote-text {
   height: 150px;
   font-size: large;
 }
 
-#label_add_quote_author {
+#label-add-quote-author {
   font-size: large;
 }
 
-#add_quote_author {
+#add-quote-author {
   height: 30px;
   font-size: large;
 }
 
-#btn_add_quote {
+#btn-add-quote {
   width: 150px;
   height: 30px;
   margin: auto;
