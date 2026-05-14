@@ -53,6 +53,16 @@ app.post("/", (req, res) => {
       res.status(400).send("Expected body to be a JSON object contains keys quote and author");
       return;
     }
+    if (!body.quote.length) {
+      console.error(`Quote is empty.`);
+      res.status(400).send("Expected quote to be a non-empty string");
+      return;
+    }
+    if (!body.author.length) {
+      console.error(`Author is empty.`);
+      res.status(400).send("Expected author to be a non-empty string");
+      return;
+    } 
     quotes.push({
       quote: body.quote,
       author: body.author,
