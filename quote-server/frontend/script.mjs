@@ -50,13 +50,16 @@ function addQuote() {
       author: author,
     }),
   }).then((response) => {
-    if (response.ok) {
-      alert("Success. Quote added.");
-    } else {
-      throw new Error();        
-    }
+      if (response.ok) {
+        alert("Success. Quote added.");
+        return;
+      } else {
+        response.text().then(
+          text => alert(`Error: ${text}`)
+        );
+      }
   }).catch((error) => {
-    alert("Error. Quote didn`t add");
+    alert("Error: Quote didn`t add");
   });
 }
 
