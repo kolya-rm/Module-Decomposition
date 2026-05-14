@@ -29,15 +29,25 @@ function showQuote() {
 }
 
 function addQuote() {
-  console.log("Add quote button clicked");
+  let quote = document.getElementById("add-quote-text").value;
+  let author = document.getElementById("add-quote-author").value;
+
+  if (!quote) {
+    alert("Quote is empty.");
+    return;
+  }
+  if (!author) {
+    alert("Author is empty.");
+    return;
+  }
   fetch(QUOTE_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify({
-      quote: document.getElementById("add-quote-text").value,
-      author: document.getElementById("add-quote-author").value,
+      quote: quote,
+      author: author,
     }),
   }).then((response) => {
     if (response.ok) {
