@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "name": "chat-server",
+  "version": "0.0.1",
+  "description": "Simple chat app backend example based on Express",
+  "main": "chat-server.mjs",
+  "scripts": {
+    "start": "node chat-server.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
