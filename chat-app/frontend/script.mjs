@@ -37,6 +37,7 @@ function redrawMessages(data) {
 function sendMessage() {
   const user = document.getElementById("username").value;
   const text = document.getElementById("message").value;
+  const time = new Date();
 
   if (!user) {
     alert("Error: User is empty!");
@@ -55,6 +56,7 @@ function sendMessage() {
     body: JSON.stringify({
       user: user,
       text: text,
+      time: time,
     }),
   })
     .then((response) => {
