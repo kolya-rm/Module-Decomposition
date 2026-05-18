@@ -71,6 +71,7 @@ function sendMessage() {
     .then((response) => {
       if (response.ok) {
         console.log(`Message sent`);
+        document.getElementById("message").value = "";
         return;
       } else {
         response.text().then((text) => {
