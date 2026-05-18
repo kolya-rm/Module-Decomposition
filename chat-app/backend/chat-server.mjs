@@ -5,18 +5,15 @@ import cors from "cors";
 const APP = express();
 const PORT = 3000;
 
-
-const MESSAGES = [
-  { user: "Tony", text: "Hi!" },
-  { user: "Agnes", text: "Hello!" },
-];
+const MESSAGES = [];
 
 
 APP.use(cors());
 
 APP.get("/", (req, res) => {
-  console.log("Received a request for messages");
-  res.send(JSON.stringify(MESSAGES));
+  const since = req.query.since;
+  console.log(`Received a request for messages since: ${since}`);
+  res.send(JSON.stringify(MESSAGES.filter(m => m.time >= since)));
 });
 
 APP.post("/", (req, res) => {
@@ -34,8 +31,8 @@ APP.post("/", (req, res) => {
       res.status(400).send("Expected body to be JSON");
       return;
     }
-    if (typeof body != "object" || !("user" in body) || !("text" in body)) {
-      console.error(`Failed to extract user and text from post body: ${body}`);
+    if (typeof body != "object" || !("user" in body) || !("text" in body) || !("time" in body)) {
+      console.error(`Failed to extract user, text, time from post body: ${body}`);
       res.status(400).send("Expected body to be a JSON object contains keys quote and author");
       return;
     }
@@ -52,6 +49,7 @@ APP.post("/", (req, res) => {
     MESSAGES.push({
       user: body.user,
       text: body.text,
+      time: body.time,
     });
     res.send("ok");
   });
