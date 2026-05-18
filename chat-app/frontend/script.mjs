@@ -1,5 +1,5 @@
-const SERVER_URL = "http://127.0.0.1:3000";
-// const SERVER_URL = "http://kolya-rm-chat-app-backend.178.105.39.91.sslip.io";
+// const SERVER_URL = "http://127.0.0.1:3000";
+const SERVER_URL = "http://kolya-rm-chat-app-backend.178.105.39.91.sslip.io";
 
 const MESSAGES = [];
 

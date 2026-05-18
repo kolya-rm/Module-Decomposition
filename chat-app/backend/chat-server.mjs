@@ -6,6 +6,7 @@ const APP = express();
 const PORT = 3000;
 
 const MESSAGES = [];
+const callbacksForNewMessages = [];
 
 
 APP.use(cors());
@@ -13,7 +14,12 @@ APP.use(cors());
 APP.get("/messages", (req, res) => {
   const since = req.query.since;
   // console.log(`Received a request for messages since: ${since}`);
-  res.send(JSON.stringify(MESSAGES.filter(m => m.time > since)));
+  const messagesToSend = MESSAGES.filter(m => m.time > since);
+  if (messagesToSend.length === 0) {
+    callbacksForNewMessages.push(value => res.send(value));
+  } else {
+    res.send(JSON.stringify(messagesToSend));
+  }
 });
 
 APP.post("/", (req, res) => {
@@ -46,11 +52,16 @@ APP.post("/", (req, res) => {
       res.status(400).send("Expected text to be a non-empty string");
       return;
     }
-    MESSAGES.push({
+    const newMessage = {
       user: body.user,
       text: body.text,
       time: body.time,
-    });
+    };
+    MESSAGES.push(newMessage);
+    while (callbacksForNewMessages.length > 0) {
+      const callback = callbacksForNewMessages.pop();
+      callback(JSON.stringify([newMessage]));
+    }
     res.send("ok");
   });
 });

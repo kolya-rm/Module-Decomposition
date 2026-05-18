@@ -7,6 +7,7 @@
 #chat {
   width: 100%;
   height: 80vh;
+  overflow-y: auto;
 }
 
 #message-panel {
