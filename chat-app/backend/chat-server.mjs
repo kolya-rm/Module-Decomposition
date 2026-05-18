@@ -10,10 +10,10 @@ const MESSAGES = [];
 
 APP.use(cors());
 
-APP.get("/", (req, res) => {
+APP.get("/messages", (req, res) => {
   const since = req.query.since;
-  console.log(`Received a request for messages since: ${since}`);
-  res.send(JSON.stringify(MESSAGES.filter(m => m.time >= since)));
+  // console.log(`Received a request for messages since: ${since}`);
+  res.send(JSON.stringify(MESSAGES.filter(m => m.time > since)));
 });
 
 APP.post("/", (req, res) => {
